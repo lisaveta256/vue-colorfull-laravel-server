@@ -13,4 +13,10 @@ class TarifUser extends Model
         'tarif_id',
         'status'
     ];
+    public function tarif(){
+        return $this->belongsTo(Tarif::class, 'tarif_id', 'id');
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

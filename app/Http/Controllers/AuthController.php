@@ -29,6 +29,7 @@ class AuthController extends Controller
         return response($response, 201);
     }
     public function postLogin(Request $request){
+       // return response()->json($request->all());
         $fields = $request->validate([
             'email'=>'required',
             'password'=>'required'

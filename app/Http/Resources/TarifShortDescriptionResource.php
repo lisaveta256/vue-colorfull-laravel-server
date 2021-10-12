@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TarifResource extends JsonResource
+class TarifShortDescriptionResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,17 +14,10 @@ class TarifResource extends JsonResource
      */
     public function toArray($request)
     {
-        /* foreach($this->tarifUser as $one){
-            $key = $one->user_id;
-             $user_ids[$key]=$one->user->email;
-        }*/
         return [
             'id'=>$this->id,
             'name'=>$this->name,
-           //'description'=>e($this->description),
-            'description'=>$this->description,
-            'price'=>$this->price,
-            'user_info'=>TarifUserInfoResource::collection($this->tarifUser)
+            'price'=>$this->price
         ];
     }
 }

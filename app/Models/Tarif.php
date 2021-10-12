@@ -14,4 +14,10 @@ class Tarif extends Model
         'description',
         'price'
     ];
+    public function tarifUser(){
+        return $this->hasMany(TarifUser::class, 'tarif_id', 'id');
+    }
+    public function info(){
+        return $this->hasMany(InfoTarif::class, 'tarif_id', 'id');
+    }
 }

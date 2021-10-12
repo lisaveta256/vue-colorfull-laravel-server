@@ -18,14 +18,14 @@ class TarifController extends Controller
         $tarifs = Tarif::all();
         return TarifResource::collection($tarifs);
     }
-    public function postAdd(Tarif $tarif){
+    /*public function postAdd(Tarif $tarif){
         //dd(auth()->user()->id, $tarif->id);
         $tarif_user = new TarifUser;
         $tarif_user->user_id=auth()->user()->id;
         $tarif_user->tarif_id=$tarif->id;
         $tarif_user->save();
         return response()->json($tarif_user, 201);
-    }
+    }*/
 
     public function getCurrent(){
         $user_id = auth()->user()->id;

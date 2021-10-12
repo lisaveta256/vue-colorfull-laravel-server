@@ -27,8 +27,11 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::get('/home', [Controllers\HomeController::class, 'getIndex']);
     Route::post('logout', [Controllers\AuthController::class, 'postLogout']);
 
-    Route::post('tarif_user/{tarif}', [Controllers\TarifController::class, 'postAdd']);
-    Route::get('tarif_user/current', [Controllers\TarifController::class, 'getCurrent']);
+    Route::post('tarif_user/{tarif}', [Controllers\TarifUserController::class, 'store']);
+    Route::get('tarif_user/current', [Controllers\TarifUserController::class, 'tarifForCurrentUser']);
+    Route::delete('tarif_user/{tarif_id}', [Controllers\TarifUserController::class, 'destroy']);
 });
+Route::get('tarif_user/{tarif_id}', [Controllers\TarifUserController::class, 'show']);
 Route::get('tarif', [Controllers\TarifController::class, 'getIndex']);
+Route::get('tarif_user', [Controllers\TarifUserController::class, 'index']);
 
