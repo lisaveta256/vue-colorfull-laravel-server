@@ -30,8 +30,16 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post('tarif_user/{tarif}', [Controllers\TarifUserController::class, 'store']);
     Route::get('tarif_user/current', [Controllers\TarifUserController::class, 'tarifForCurrentUser']);
     Route::delete('tarif_user/{tarif_id}', [Controllers\TarifUserController::class, 'destroy']);
+    Route::get('account', [Controllers\AccountController::class, 'getIndex']);
+    Route::post('account', [Controllers\AccountController::class, 'postUpdateOrCreate']);
+   // Route::put('account', [Controllers\AccountController::class, 'update']);
+    Route::post('image', [Controllers\AccountController::class, 'loadImage']);
+    
+    
 });
 Route::get('tarif_user/{tarif_id}', [Controllers\TarifUserController::class, 'show']);
+Route::get('tarif_info', [Controllers\TarifUserController::class, 'info']);
 Route::get('tarif', [Controllers\TarifController::class, 'getIndex']);
 Route::get('tarif_user', [Controllers\TarifUserController::class, 'index']);
+Route::get('country', [Controllers\CountryController::class, 'getIndex']);
 

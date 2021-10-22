@@ -24,7 +24,8 @@ class TarifResource extends JsonResource
            //'description'=>e($this->description),
             'description'=>$this->description,
             'price'=>$this->price,
-            'user_info'=>TarifUserInfoResource::collection($this->tarifUser)
+            'user_info'=>TarifUserInfoResource::collection($this->tarifUser),
+            'tarif_info'=>TarifInfoResource::collection($this->info)
         ];
     }
 }

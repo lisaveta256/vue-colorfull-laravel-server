@@ -45,4 +45,7 @@ class User extends Authenticatable
     public function tarifUser1(){
         return $this->hasMany(TarifUser::class);
     }
+    public function account(){
+        return $this->hasOne(Account::class,'user_id','id');
+    }
 }

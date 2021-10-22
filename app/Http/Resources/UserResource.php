@@ -28,7 +28,8 @@ class UserResource extends JsonResource
             'last_tarif_name'=>optional(optional($last_tarif_user)->tarif)->name,
             'updated_at'=>optional($last_tarif_user)->updated_at,
            // 'tarifs'=>$this->tarifUser1
-            'tarifs'=>TarifShortDescriptionResource::collection($tarifs)
+            'tarifs'=>TarifShortDescriptionResource::collection($tarifs),
+            'acccount'=>AccountResource::make($this->account)
         ];
     }
 }

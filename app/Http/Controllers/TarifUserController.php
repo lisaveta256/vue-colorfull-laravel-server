@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Tarif;
 use App\Models\User;
 use App\Models\TarifUser;
+use App\Models\InfoTarif;
 use App\Http\Resources\TarifResource;
+use App\Http\Resources\TarifInfoResource;
 use App\Http\Resources\UserResource;
 use Auth;
 
@@ -57,6 +59,12 @@ class TarifUserController extends Controller
     {
         $tarif=Tarif::with('tarifUser')->whereId($id)->first();//::find($id);//;   -> where('id', $id)  - любые поля
        // return $tarif;
+        return TarifResource::make($tarif);
+    }
+    public function info()
+    {
+        $tarif=Tarif::with(['info','tarifUser'])->whereId('7')->first();//::find($id);//;   -> where('id', $id)  - любые поля
+       //return $tarif;
         return TarifResource::make($tarif);
     }
     public function tarifForCurrentUser(){

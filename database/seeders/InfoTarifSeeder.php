@@ -37,7 +37,7 @@ class InfoTarifSeeder extends Seeder
                   <li>pulvinar hendrerit.</li>
                 </ul>
                 <button>Buy</button>
-              </div>', 'perks'=>'20BYN/month','links'=>'basic.jpg', 'status'=>'Ok'
+              </div>', 'perks'=>'20BYN/month','links'=>'basic links', 'status'=>'Ok'
             ],
             [
                 'tarif_id'=>'8','short_description'=>'<h1>Our lessons</h1>
@@ -45,7 +45,7 @@ class InfoTarifSeeder extends Seeder
                 <a href="#"> Link1</a>
                 <a href="#"> Link2</a>
                 <hr> Standart info
-                </p>', 'perks'=>'30BYN/month','links'=>'standart.jpg', 'status'=>'Ok'
+                </p>', 'perks'=>'30BYN/month','links'=>'standart links', 'status'=>'Ok'
             ],
             [
                 'tarif_id'=>'9','short_description'=>'<h1>Our lessons</h1>
@@ -54,7 +54,7 @@ class InfoTarifSeeder extends Seeder
                 <a href="#"> Link2</a>
                 <a href="#"> Link3</a>
                 <hr> Premium info
-                </p>', 'perks'=>'40BYN/month','links'=>'premium.jpg', 'status'=>'Ok'
+                </p>', 'perks'=>'40BYN/month','links'=>'premium links', 'status'=>'Ok'
             ]
         ]);
     }
