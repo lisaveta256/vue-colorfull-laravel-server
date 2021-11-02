@@ -30,4 +30,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'vkontakte' => [
+        'client_id' => env('VK_CLIENT_ID'),
+        'client_secret' => env('VK_CLIENT_SECRET'),
+        'redirect' => 'http://localhost:8001/api/vk/redirect',
+    ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => 'http://localhost:8001/api/google/redirect',
+    ],
+    //key=API_KEY
 ];

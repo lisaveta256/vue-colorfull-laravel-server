@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 
 class User extends Authenticatable
@@ -47,5 +49,14 @@ class User extends Authenticatable
     }
     public function account(){
         return $this->hasOne(Account::class,'user_id','id');
+    }
+    public static function generatePassword($length = 8)
+    {
+        return Str::random($length);
+    }
+
+    public static function createPassword($str = null)
+    {
+        return Hash::make($str ?? Str::random(8));
     }
 }

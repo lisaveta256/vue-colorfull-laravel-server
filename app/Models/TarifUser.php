@@ -13,6 +13,14 @@ class TarifUser extends Model
         'tarif_id',
         'status'
     ];
+    protected $dispatchesEvents = [
+        'created'=>\App\Events\TarifUserEvent::class,
+    ];
+   /* protected static function booted(){
+        static::created(function($tarif_user){
+           // dd($tarif_user);
+        });
+    }*/
     public function tarif(){
         return $this->belongsTo(Tarif::class, 'tarif_id', 'id');
     }

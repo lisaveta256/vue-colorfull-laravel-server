@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Account;
+use App\Models\User;
 use App\Http\Resources\UserResource;
 use Auth;
 use File;
@@ -76,5 +77,18 @@ class AccountController extends Controller
         }
 
         //dd($request->all());
+    }
+    public function changePassword(Request $request){
+        $id = Auth::user()->id;
+        $fields = $request->validate([
+            'password'=>'required|confirmed'
+        ]);
+        $user = User::where('id',$id)->update(
+            [
+               'password'=>bcrypt($fields['password'])
+            ]
+          );
+        return response()->json($user);
+
     }
 }

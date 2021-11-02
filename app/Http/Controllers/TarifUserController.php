@@ -75,6 +75,14 @@ class TarifUserController extends Controller
        // dd(\Auth::user()->id);
       
     }
+    public function postUpdate(TarifUser $tarif_user=null){
+        $user = auth()->user();
+       // dd($tarif_user);
+        if($user->can('update',$tarif_user)){
+            dd(['message'=>'hhhh']);
+        }
+        
+    }
     /**
      * Update the specified resource in storage.
      *

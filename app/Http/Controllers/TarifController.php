@@ -42,6 +42,8 @@ class TarifController extends Controller
         $data->tarif_info=$tarif_user_info;
         return response()->json($data, 201);
     }
+
+
     /*
     
     public function postAdd($tarif_id){
